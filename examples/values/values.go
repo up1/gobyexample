@@ -1,6 +1,6 @@
-// Go has various value types including strings,
-// integers, floats, booleans, etc. Here are a few
-// basic examples.
+// ในภาษา Go นั้นมีชนิดตัวแปรจำนวนมาก</br>
+// ไม่ว่าจะเป็น string, integer, float, boolean</br>
+// มาดูตัวอย่างการใช้งานแบบเล็ก ๆ กัน
 
 package main
 
@@ -8,14 +8,14 @@ import "fmt"
 
 func main() {
 
-    // Strings, which can be added together with `+`.
+    // Strings, ทำการเชื่อมต่อข้อมูลด้วย `+`
     fmt.Println("go" + "lang")
 
-    // Integers and floats.
+    // Integers และ floats
     fmt.Println("1+1 =", 1+1)
     fmt.Println("7.0/3.0 =", 7.0/3.0)
 
-    // Booleans, with boolean operators as you'd expect.
+    // Booleans, สามารถใช้งาน operator ต่าง ๆ เหล่านี้ได้เลย
     fmt.Println(true && false)
     fmt.Println(true || false)
     fmt.Println(!true)

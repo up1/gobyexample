@@ -1,17 +1,20 @@
-# To run the program, put the code in `hello-world.go` and
-# use `go run`.
+# ขั้นตอนการทำงาน<br/>
+# 1. ทำการ copy code ไปไว้ในไฟล์ `hello-world.go` <br/>
+# 2. ทำการ run โปรแกรมด้วยคำสั่ง `go run`.
 $ go run hello-world.go
 hello world
 
-# Sometimes we'll want to build our programs into
-# binaries. We can do this using `go build`.
+# ในบางครั้ง เราอาจต้องการ build โปรแกรม
+# ให้อยู่ในรูปแบบ binaries
+# ก็สามารถทำได้ด้วยคำสั่ง `go build`
 $ go build hello-world.go
 $ ls
 hello-world	hello-world.go
 
-# We can then execute the built binary directly.
+# สามารถเรียกใช้งาน binary ได้ดังนี้
 $ ./hello-world
 hello world
 
-# Now that we can run and build basic Go programs, let's
-# learn more about the language.
+# โดยในตอนนี้ เราสามารถทำการ run และ build
+# โปรแกรมที่พัฒนาด้วยภาษา Go ได้แล้ว <br/><br/>
+# ดังนั้น มาเริ่มเรียนรู้ความสามารถอื่น ๆ กัน

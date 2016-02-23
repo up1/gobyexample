@@ -1,2 +1,4 @@
 .anvil
 *.pyc
+pkg/
+src/

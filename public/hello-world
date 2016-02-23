@@ -25,12 +25,12 @@
         
         <tr>
           <td class="docs">
-            <p>Our first program will print the classic &ldquo;hello world&rdquo;
-message. Here&rsquo;s the full source code.</p>
+            <p>โปรแกรมแรกคือ การแสดงข้อความ &ldquo;hello world&rdquo;
+ออกมายัง console ซึ่งมี source code ดังนี้</p>
 
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/2C7wwJ6nxG"><img title="Run code" src="play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/r6rdiSloC0"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -69,8 +69,9 @@ message. Here&rsquo;s the full source code.</p>
         
         <tr>
           <td class="docs">
-            <p>To run the program, put the code in <code>hello-world.go</code> and
-use <code>go run</code>.</p>
+            <p>ขั้นตอนการทำงาน<br/>
+1. ทำการ copy code ไปไว้ในไฟล์ <code>hello-world.go</code> <br/>
+2. ทำการ run โปรแกรมด้วยคำสั่ง <code>go run</code>.</p>
 
           </td>
           <td class="code leading">
@@ -84,8 +85,9 @@ use <code>go run</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Sometimes we&rsquo;ll want to build our programs into
-binaries. We can do this using <code>go build</code>.</p>
+            <p>ในบางครั้ง เราอาจต้องการ build โปรแกรม
+ให้อยู่ในรูปแบบ binaries
+ก็สามารถทำได้ด้วยคำสั่ง <code>go build</code></p>
 
           </td>
           <td class="code leading">
@@ -100,7 +102,7 @@ binaries. We can do this using <code>go build</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>We can then execute the built binary directly.</p>
+            <p>สามารถเรียกใช้งาน binary ได้ดังนี้</p>
 
           </td>
           <td class="code leading">
@@ -114,8 +116,9 @@ binaries. We can do this using <code>go build</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Now that we can run and build basic Go programs, let&rsquo;s
-learn more about the language.</p>
+            <p>โดยในตอนนี้ เราสามารถทำการ run และ build
+โปรแกรมที่พัฒนาด้วยภาษา Go ได้แล้ว <br/><br/>
+ดังนั้น มาเริ่มเรียนรู้ความสามารถอื่น ๆ กัน</p>
 
           </td>
           <td class="code empty">

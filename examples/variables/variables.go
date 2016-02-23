@@ -1,6 +1,6 @@
-// In Go, _variables_ are explicitly declared and used by
-// the compiler to e.g. check type-correctness of function
-// calls.
+// ในภาษา Go นั้น นักพัฒนาต้องทำการประกาศตัวแปรขึ้นมา<br/>
+// ซึ่งตัวแปรเหล่านี้จะถูกใช้งานจาก compiler ของภาษา<br/>
+// เช่น ตรวจสอบว่าทำงานถูกต้องตามชนิดของมันหรือไม่
 
 package main
 
@@ -8,27 +8,28 @@ import "fmt"
 
 func main() {
 
-    // `var` declares 1 or more variables.
+    // `var` ใช้สำหรับการประกาศตัวแปรตั้งแต่ 1 ตัวขึ้นไป
     var a string = "initial"
     fmt.Println(a)
 
-    // You can declare multiple variables at once.
+    // สามารถกำหนดค่าของหลายตัวแปร ได้พร้อม ๆ กัน
     var b, c int = 1, 2
     fmt.Println(b, c)
 
-    // Go will infer the type of initialized variables.
+    // ถ้าไม่ทำการกำหนดชนิดของตัวแปรแล้ว<br/>
+    // ภาษา Go จะอ้างถึงชนิดของตัวแปร จากค่าเริ่มต้นที่กำหนดให้
     var d = true
     fmt.Println(d)
 
-    // Variables declared without a corresponding
-    // initialization are _zero-valued_. For example, the
-    // zero value for an `int` is `0`.
+    // ถ้าตัวแปรที่ประกาศขึ้นมา โดยไม่กำหนดค่าเริ่มต้นแล้ว<br/>
+    // ภาษา Go จะทำการกำหนดค่าเริ่มต้นด้วย <a href="https://golang.org/ref/spec#The_zero_value">Zero value</a> ให้อัตโนมัติ
+    // ตัวอย่างเช่น ค่า zero value ของ `int` คือ `0`
+
     var e int
     fmt.Println(e)
 
-    // The `:=` syntax is shorthand for declaring and
-    // initializing a variable, e.g. for
-    // `var f string = "short"` in this case.
+    // สามารถสร้างตัวแปร และ กำหนดค่าเริ่มต้นแบบสั้น ๆ ด้วย `:=` <br/>
+    // ซึ่งทำให้การเขียน code ง่าย และ สะดวกขึ้น
     f := "short"
     fmt.Println(f)
 }
