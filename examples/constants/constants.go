@@ -1,33 +1,29 @@
-// Go supports _constants_ of character, string, boolean,
-// and numeric values.
+// ในภาษา Go นั้นสนับสนุนเรื่องของค่าคงที่<br/>
+// ซึ่งค่าคงที่ประกอบไปด้วย character, string, boolean และตัวเลข
 
 package main
 
 import "fmt"
 import "math"
 
-// `const` declares a constant value.
+// สามารถประกาศค่าคงที่ด้วย `const`
 const s string = "constant"
 
 func main() {
     fmt.Println(s)
 
-    // A `const` statement can appear anywhere a `var`
-    // statement can.
+    // โดยจะมีรูปแบบการใช้งานเหมือนกับ `var`
     const n = 500000000
 
-    // Constant expressions perform arithmetic with
-    // arbitrary precision.
+    // สามารถใช้งาน operation ต่าง ๆ ทางคณิตศาสตร์ได้
     const d = 3e20 / n
     fmt.Println(d)
 
-    // A numeric constant has no type until it's given
-    // one, such as by an explicit cast.
+    // โดยที่ค่าคงที่จะไม่มีชนิดของข้อมูลไปจนกว่า จะถูก cast type
     fmt.Println(int64(d))
 
-    // A number can be given a type by using it in a
-    // context that requires one, such as a variable
-    // assignment or function call. For example, here
-    // `math.Sin` expects a `float64`.
+    // ค่าคงที่ที่มีข้อมูลเป็นตัวเลข
+    // จะทำการกำหนดชนิดข้อมูลที่เหมาะสมให้</br>
+    // ตัวอย่างเช่นการใช้งาน `math.Sin` จะกำหนดชนิดข้อมูลเป็น `float64` ให้
     fmt.Println(math.Sin(n))
 }
