@@ -7,6 +7,6 @@ $ go run for.go
 9
 loop
 
-# We'll see some other `for` forms later when we look at
-# `range` statements, channels, and other data
-# structures.
+# เราจะเห็นการทำงานเช่นเดียวกับลูป `for` 
+# ในรูปแบบอื่น ๆ อีก
+# เช่น `range`, channels และ โครงสร้างข้อมูลอื่น ๆ
