@@ -25,8 +25,7 @@
         
         <tr>
           <td class="docs">
-            <p><em>Switch statements</em> express conditionals across many
-branches.</p>
+            <p>คำสั่ง <em>Switch</em> ใช้สำหรับการจัดการเงื่อนไขที่มีหลายทางเลือก</p>
 
           </td>
           <td class="code empty leading">
@@ -40,7 +39,7 @@ branches.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/8b5CajPcHn"><img title="Run code" src="play.png" class="run" /></a>
+	        <a href="http://play.golang.org/p/ZnQ-Tgtyj9"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -74,7 +73,7 @@ branches.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic <code>switch</code>.</p>
+            <p>การใช้งาน <code>switch</code> แบบง่าย ๆ</p>
 
           </td>
           <td class="code leading">
@@ -96,9 +95,9 @@ branches.</p>
         
         <tr>
           <td class="docs">
-            <p>You can use commas to separate multiple expressions
-in the same <code>case</code> statement. We use the optional
-<code>default</code> case in this example as well.</p>
+            <p>สามารถใช้ เครื่องหมาย (,) <br/>
+สำหรับกรณีที่มีมากกว่าหนึ่งเงื่อนไขในกรณีเดียว<br/>
+และถ้าไม่ตรงกับกรณีใดเลย สามารถกำหนดใำเข้าทำงานในส่วนของ <code>default</code> ได้</p>
 
           </td>
           <td class="code leading">
@@ -116,9 +115,9 @@ in the same <code>case</code> statement. We use the optional
         
         <tr>
           <td class="docs">
-            <p><code>switch</code> without an expression is an alternate way
-to express if/else logic. Here we also show how the
-<code>case</code> expressions can be non-constants.</p>
+            <p>ถ้าในคำสั่ง <code>switch</code> ไม่มีชุดคำสั่งใด ๆ เลย<br/>
+มันคือ การทำงานในอีกรูปแบบหนึ่งของ if/else นั่นเอง<br/>
+โดยที่ในแต่ละกรณีไม่จำเป็นต้องเป็นค่าคงที่แล้ว</p>
 
           </td>
           <td class="code">
