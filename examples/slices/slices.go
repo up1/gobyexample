@@ -1,5 +1,5 @@
-// _Slices_ are a key data type in Go, giving a more
-// powerful interface to sequences than arrays.
+// _Slices_ คือประเภทข้อมูลสำคัญใน Go
+// ช่วยให้เราจัดการข้อมูลที่อยู่ในลักษณะลำดับได้มากกว่า Arrays
 
 package main
 
@@ -7,63 +7,66 @@ import "fmt"
 
 func main() {
 
-    // Unlike arrays, slices are typed only by the
-    // elements they contain (not the number of elements).
-    // To create an empty slice with non-zero length, use
-    // the builtin `make`. Here we make a slice of
-    // `string`s of length `3` (initially zero-valued).
+    // Slices ไม่เหมือน Arrays ตรงที่ส่วนใจที่ข้อมูลที่เก็บอยู่
+    // โดยไม่ได้ fix จำนวนข้อมูลที่เก็บแบบ Arrays
+    // เราสร้าง slice ที่มีจำนวนข้อมูลมากกว่ากว่าศูนย์ตัวได้โดยใช้ ฟังก์ชัน make
+    // ซึ่งเป็น builtin ฟังก์ชัน ใช้ได้เลยไม่ต้อง import
+    // ตัวอย่างนี้คือเราสร้าง slice ของ string ที่มีจำนวนข้อมูล 3 ตัว
+    // (โดยที่ค่าแต่ละตัวเป็นค่า zero-valued ของประเภทข้อมูลนั้น สำหรับ string คือ "" string ว่าง)
     s := make([]string, 3)
     fmt.Println("emp:", s)
 
-    // We can set and get just like with arrays.
+    // วิธีการอ้างอิงข้อมูลข้างในใช้  index เหมือนกับ arrays
     s[0] = "a"
     s[1] = "b"
     s[2] = "c"
     fmt.Println("set:", s)
     fmt.Println("get:", s[2])
 
-    // `len` returns the length of the slice as expected.
+    // `len` เป็นฟังก์ชันหาจำนวนข้อมูลที่ slice เก็บอยู่เช่นเดียวกับ arrays
     fmt.Println("len:", len(s))
 
-    // In addition to these basic operations, slices
-    // support several more that make them richer than
-    // arrays. One is the builtin `append`, which
-    // returns a slice containing one or more new values.
-    // Note that we need to accept a return value from
-    // append as we may get a new slice value.
+    // นอกจาก len และ การใช้ index อ้างอิงข้อมูลแล้ว slices ยังรองรับการจัดการ
+    // ข้อมูลที่มากกว่า arrays
+    // อีกหนึ่งฟังก์ชันที่สำคัญคือ `append` ซึ่งเป็น builtin ฟังก์ชันเช่นกัน
+    // เราเอา `append` มาใช้สำหรับเพิ่มข้อมูลเข้าไปใน slices ที่มีอยู่เดิม
+    // เสร็จแล้ว `append` จะส่งค่า slices ออกมา ซึ่งอาจจะเป็น slices ใหม่ หรือ slices เดิม
+    // ทำให้เวลาใช้ `append` เราจะเอาตัวแปรมาเก็บค่าที่ส่งกลับมาเสมอ
+    // เพื่อให้มั่นใจได้ว่าเป็น slices ที่เก็บข้อมูลเดิมต่อด้วยค่าที่เพิ่มไปใหม่
     s = append(s, "d")
     s = append(s, "e", "f")
     fmt.Println("apd:", s)
 
-    // Slices can also be `copy`'d. Here we create an
-    // empty slice `c` of the same length as `s` and copy
-    // into `c` from `s`.
+    // เราสามารถ `copy` slices ได้เช่นกัน โดยใช้ฟังก์ชัน `copy` (builtin function)
+    // ตัวอย่างเช่นเราสร้าง slice `c` ที่มีจำนวนสมาชิกเท่ากับ `s`
+    // ซึ่งตอนนี้ทุกค่าใน `c` เป็น string ว่าง
+    // หลังจากนั้น `copy` ค่าจาก s ไป c
     c := make([]string, len(s))
     copy(c, s)
     fmt.Println("cpy:", c)
 
-    // Slices support a "slice" operator with the syntax
-    // `slice[low:high]`. For example, this gets a slice
-    // of the elements `s[2]`, `s[3]`, and `s[4]`.
+    // Slices รองรับ operator ที่ชื่อว่า "slice" ซึ่งมีรูปแบบการใช้คือ
+    // `slice[low:high]`. กำหนดค่า low และ high คั่นด้วย `:` ใน [] ข้างหลังชื่อตัวแปร slice
+    // จากตัวอย่าง low คือ 2 และ high คือ 5
+    // เป็นการ slice ค่าจากตัวแปร slice `s` จากตำแหน่ง 2,3,4 ออกมาเป็นเป็น slice `l`
     l := s[2:5]
     fmt.Println("sl1:", l)
 
-    // This slices up to (but excluding) `s[5]`.
+    // ถ้าใช้แบบนี้คือ slice ตั้งแต่ 0 จนถึงตัวที่ 4 (ตัวสุดท้ายที่นับคือค่า high - 1)
     l = s[:5]
     fmt.Println("sl2:", l)
 
-    // And this slices up from (and including) `s[2]`.
+    // ถ้าใช้แบบนี้คือ slice ตั้งแต่ 2 จนถึงตัวสุดท้ายใน `s`
     l = s[2:]
     fmt.Println("sl3:", l)
 
-    // We can declare and initialize a variable for slice
-    // in a single line as well.
+    // เราสามารถสร้างตัวแปร slice และกำหนดค่าเริ่มต้นได้แบบนี้
+    // คล้ายๆกับ arrays แต่ไม่ต้องใส่ตัวเลขจำนวนใน []
     t := []string{"g", "h", "i"}
     fmt.Println("dcl:", t)
 
-    // Slices can be composed into multi-dimensional data
-    // structures. The length of the inner slices can
-    // vary, unlike with multi-dimensional arrays.
+    // Slices ก็สามารถเอามาซ้อนกันเพื่อทำเป็นหลายมิติได้เช่นเดียวกันกับ arrays
+    // แต่ว่าขนาดของ slices ที่ซ้อนอยู่ไม่จำเป็นมีนำนวนสมาชิกเท่ากันแบบ arrays
     twoD := make([][]int, 3)
     for i := 0; i < 3; i++ {
         innerLen := i + 1
