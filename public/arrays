@@ -20,23 +20,23 @@
   <body>
     <div class="example" id="arrays">
       <h2><a href="./">Go by Example</a>: Arrays</h2>
-
+      
       <table>
-
+        
         <tr>
           <td class="docs">
-            <p>ในภาษาโก <em>อาเรย์</em> คือตัวเลขลำดับของส่วนประกอบที่มีความยาวคงที่</p>
+            <p>ในภาษาโก <em>อาเรย์</em> คือตัวเลขลำดับของสมาชิกที่มีความยาวคงที่</p>
 
           </td>
           <td class="code empty leading">
-
-
+	        
+            
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-
+            
           </td>
           <td class="code leading">
 	        <a href="http://play.golang.org/p/0FAaKy4wbr"><img title="Run code" src="play.png" class="run" /></a>
@@ -45,51 +45,55 @@
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-
+            
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-
+            
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>เราสามารถสร้างอาเรย์ของจำนวนเต็มขนาด 5 ตัว ชื่อ <code>a</code> โดยที่ค่าเริ่มต้นของแต่ละส่วนประกอบในอาเรย์ชนิดจำนวนเต็มคือ <code>0</code></p>
+            <p>สร้างอาเรย์ <code>a</code> ชนิด int ขนาด 5 element
+โดยที่ค่าเริ่มต้นในแต่ละ element คือ <code>0</code></p>
+
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">a</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;emp:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
 </pre></div>
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>เราสามารถใช้ index เพื่อเซ็ตค่าให้แต่ละส่วนประกอบในอาเรย์ได้โดยใช้รูปแบบ <code>array[index] = value</code>, และสามารถดึงค่ามาได้โดย <code>array[index]</code>.</p>
+            <p>เราสามารถ set และ get ค่าจากอาเรย์ได้โดยใช้ index
+set โดยใช้รูปแบบ <code>array[index] = value</code>,
+และ get ค่าโดยใช้รูปแบบ <code>array[index]</code>.</p>
 
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre>    <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">=</span> <span class="mi">100</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;set:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;get:&quot;</span><span class="p">,</span> <span class="nx">a</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
@@ -97,41 +101,41 @@
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>เราสามารถใช้ <code>len</code> เพื่อตรวจสอบความยาวของอาเรย์</p>
+            <p>ใช้ฟังชั่น <code>len</code> เมื่อเราอยากรู้ขนาดของอาเรย์.</p>
 
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;len:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">a</span><span class="p">))</span>
 </pre></div>
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>เราสามารถใช้รูปแบบดังกล่าวเพื่อประกาศและกำหนดค่าเริ่มต้นให้กับอาเรย์ได้ในหนึ่งบรรทัด.</p>
+            <p>สำหรับการประกาศและกำหนดค่าเริ่มต้นให้กับอาเรย์ในหนึ่งบรรทัดจะใช้รูปแบบ.</p>
 
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre>    <span class="nx">b</span> <span class="o">:=</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;dcl:&quot;</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
 </pre></div>
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>ชนิดของตัวแปรอาเรย์เป็นแบบหนึ่งมิติ แต่เราสามารถที่จะประกอบให้เป็นหลายๆ มิติได้เช่นกัน.</p>
+            <p>ตัวแปรชนิดอาเรย์จะเป็นแบบหนึ่งมิติ แต่เราก็สามารถประกอบให้เป็นหลายๆ มิติได้เช่นกัน</p>
 
           </td>
           <td class="code">
-
+	        
             <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">twoD</span> <span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="kt">int</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
         <span class="k">for</span> <span class="nx">j</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">{</span>
@@ -144,18 +148,19 @@
 
           </td>
         </tr>
-
+        
       </table>
-
+      
       <table>
-
+        
         <tr>
           <td class="docs">
-            <p>โน็ต: ที่ console output จะพิมพ์ออกมาเป็น <code>[v1 v2 v3 ...]</code> เมื่อเราพิมพ์ด้วย <code>fmt.Println</code>.</p>
+            <p>ที่ console output จะพิมพ์ออกมาเป็น <code>[v1 v2 v3 ...]</code>
+เมื่อเราพิมพ์ด้วย <code>fmt.Println</code>.</p>
 
           </td>
           <td class="code leading">
-
+	        
             <div class="highlight"><pre><span class="gp">$</span> go run arrays.go
 <span class="go">emp: [0 0 0 0 0]</span>
 <span class="go">set: [0 0 0 0 100]</span>
@@ -167,25 +172,26 @@
 
           </td>
         </tr>
-
+        
         <tr>
           <td class="docs">
-            <p>ซึ่งโดยปกติในภาษาโก คุณจะเห็น <em>slices</em> มากกว่าการใช้อาเรย์ ดังนั้นในหัวข้อถัดไปเรามาดูเรื่อง slices กัน.</p>
+            <p>ซึ่งโดยปกติในภาษาโก คุณจะเห็น slices มากกว่าการใช้อาเรย์
+ดังนั้นในหัวข้อถัดไปเรามาดูเรื่อง slices กัน.</p>
 
           </td>
           <td class="code empty">
-
-
+	        
+            
           </td>
         </tr>
-
+        
       </table>
-
-
+      
+      
       <p class="next">
-        ตัวอย่างถัดไป: <a href="slices">Slices</a>.
+        Next example: <a href="slices">Slices</a>.
       </p>
-
+      
       <p class="footer">
         by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/arrays">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>

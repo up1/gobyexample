@@ -1,5 +1,6 @@
-# Note that maps appear in the form `map[k:v k:v]` when
-# printed with `fmt.Println`.
+# เมื่อทำการแสดงข้อมูลของ map 
+# ด้วยคำสั่ง  `fmt.Println` <br/>
+# จะแสดงอยู่ในรูปแบบดังนี้ `map[k:v k:v]`
 $ go run maps.go 
 map: map[k1:7 k2:13]
 v1:  7
